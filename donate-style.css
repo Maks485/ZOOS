@@ -751,7 +751,15 @@ button {
     max-width: 1000px;
   }
 }
+@media (max-width: 1200px) {
+  .container {
+    max-width: 900px;
+  }
+}
 @media (max-width: 1000px) {
+  .container {
+    max-width: 800px;
+  }
   .feed-a-friend__main {
     padding: 45px;
     padding-top: 20px;

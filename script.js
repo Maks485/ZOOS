@@ -1,7 +1,3 @@
-
-
-
-
 const burgerButton = document.querySelector(".burger-menu-btn");
 const burgerMenu = document.querySelector(".burger-menu");
 
