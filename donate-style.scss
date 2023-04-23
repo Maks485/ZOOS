@@ -30,6 +30,15 @@ body {
     align-items: center;
 }
 
+.unselectable,
+button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 .header {
     &__box {
@@ -57,6 +66,7 @@ body {
         background-image: url(assets/logo.png);
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
     }
 
     &__menu {
@@ -101,6 +111,7 @@ body {
                     z-index: 999;
                     width: 18px;
                     height: 10px;
+                    cursor: pointer;
                 }
             }
         }
@@ -159,6 +170,12 @@ body {
             font-size: 16px;
             line-height: 140%;
             color: #333B41;
+
+            &:nth-child(4) {
+                background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
         }
     }
 
@@ -182,8 +199,6 @@ body {
         align-content: space-around;
         margin-top: 40px;
     }
-
-    &__main {}
 
     &__donation-callout {
         display: flex;
@@ -462,9 +477,10 @@ body {
 
     &__button {
         background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-        border-radius: 25px;
+        border-radius: 30px;
         align-self: center;
         width: 298px;
+        max-width: 100%;
         height: 54px;
         font-style: normal;
         font-weight: 500;
@@ -473,7 +489,33 @@ body {
         text-align: center;
         text-transform: uppercase;
         color: #FFFFFF;
+        position: relative;
+        cursor: pointer;
         margin-bottom: 30px;
+
+        span {
+            z-index: 2;
+            position: relative;
+            cursor: pointer;
+        }
+    }
+
+    &__button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #E47209;
+        opacity: 0;
+        border-radius: 30px;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    &__button:hover::after {
+        opacity: 1;
     }
 
     &__bottom-text {
@@ -544,8 +586,6 @@ body {
             & button {
                 width: 298px;
                 height: 54px;
-                left: calc(50% - 298px/2);
-                top: 0px;
                 background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
                 border-radius: 5px;
                 font-style: normal;
@@ -555,6 +595,35 @@ body {
                 text-align: center;
                 text-transform: uppercase;
                 color: #FFFFFF;
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    cursor: pointer;
+                }
+            }
+
+            & button::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: #E47209;
+                opacity: 0;
+                border-radius: 5px;
+                transition: opacity 0.3s ease-in-out;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            & button:hover::after {
+                opacity: 1;
             }
 
             .mobile-social-medias-menu {
@@ -767,13 +836,17 @@ body {
     bottom: 20px;
     right: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity .3s, background-color .3s;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     font-size: 20px;
     color: #FFFFFF;
-    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    background-color: #FE9013;
+}
+
+.top-button:hover {
+    background-color: #E47209;
 }
 
 .show {
@@ -940,11 +1013,11 @@ body {
         height: 42px;
     }
 
-    .feed-a-friend__panda-diet .panda-image{
+    .feed-a-friend__panda-diet .panda-image {
         width: 50%;
     }
 
-    .feed-a-friend__panda-diet .pandas-diets .pandas-diets__amount{
+    .feed-a-friend__panda-diet .pandas-diets .pandas-diets__amount {
         font-size: 48px;
     }
 }
@@ -1027,42 +1100,42 @@ body {
         margin-bottom: 35px;
     }
 
-    .feed-a-friend__panda-diet .pandas-diets .pandas-diets__amount{
+    .feed-a-friend__panda-diet .pandas-diets .pandas-diets__amount {
         font-size: 40px;
     }
 
-    .feed-a-friend__panda-diet .pandas-diets div{
+    .feed-a-friend__panda-diet .pandas-diets div {
         font-size: 10px;
     }
 
-    .feed-a-friend__panda-diet .x-icon{
+    .feed-a-friend__panda-diet .x-icon {
         height: 8px;
         width: 8px;
     }
 
-    .feed-a-friend .amount__amount-bar{
+    .feed-a-friend .amount__amount-bar {
         height: 15px;
         margin-bottom: 10px;
     }
 
-    .feed-a-friend .amount__amount-bar .line{
+    .feed-a-friend .amount__amount-bar .line {
         height: 1px;
     }
-    
-    .feed-a-friend .amount__amount-bar .line .dot{
+
+    .feed-a-friend .amount__amount-bar .line .dot {
         height: 6px;
         width: 6px;
     }
 
-    .feed-a-friend .amount__amounts{
+    .feed-a-friend .amount__amounts {
         margin-bottom: 25px;
     }
 
-    .feed-a-friend .amount__amounts .amount{
+    .feed-a-friend .amount__amounts .amount {
         font-size: 15px;
     }
 
-    .feed-a-friend__donation-callout .donation-message{
+    .feed-a-friend__donation-callout .donation-message {
         margin-bottom: 30px;
     }
 
@@ -1072,31 +1145,31 @@ body {
         padding-bottom: 10px;
     }
 
-    .feed-a-friend__panda-diet{
+    .feed-a-friend__panda-diet {
         margin-bottom: 5px;
     }
 
-    .feed-a-friend .amount__another-amount{
+    .feed-a-friend .amount__another-amount {
         margin-bottom: 20px;
     }
 
-    .feed-a-friend .amount__periods{
+    .feed-a-friend .amount__periods {
         margin-bottom: 20px;
     }
 
-    .feed-a-friend__button{
+    .feed-a-friend__button {
         width: 100%;
     }
 }
 
 @media (max-width: 400px) {
-    .feed-a-friend__panda-diet .pandas-diets .pandas-diets__amount{
+    .feed-a-friend__panda-diet .pandas-diets .pandas-diets__amount {
         font-size: 20px;
     }
 }
 
 @media (max-width: 300px) {
-    .footer__top--left button{
-        width: 90vw;
+    .footer__top--left button {
+        max-width: 90vw;
     }
-  }
+}

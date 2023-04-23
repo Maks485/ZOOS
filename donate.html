@@ -100,7 +100,7 @@
                                 <div class="amount" data-value="50">$50</div>
                                 <div class="amount" data-value="25">$25</div>
                             </div>
-                            <input class="amount__another-amount" placeholder="Another amount" type="number" min="0" max="100">
+                            <input class="amount__another-amount" placeholder="Another amount" type="number" min="0" max="1000000">
                             <div class="amount__periods">
                                 <div class="amount__periods--period">
                                     <input type="radio" name="period" value="monthly">
@@ -111,8 +111,7 @@
                                     <div>Once</div>
                                 </div>
                             </div>
-                        </div>
-                        <button class="feed-a-friend__button">Feed a friend now</button>
+                            <button class="feed-a-friend__button unselectable"><span>Feed a friend now</span></button>
                         <div class="feed-a-friend__bottom-text">Share with your friends on social networks</div>
                     </div>
                 </div>
@@ -124,7 +123,7 @@
         <div class="container">
             <div class="footer__top">
                 <div class="footer__top--left">
-                    <img class="footer__logo" src="assets/logo.png" alt="logo">
+                    <img class="footer__logo" src="assets/logo.png" onclick="location.href='index.html';">
                     <div class="mobile-social-medias-menu">
                         <div class="social-medias-item">
                             <div class="social-medias-circle">
@@ -149,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                    <button>donate for volunteers</button>
+                    <button><span>donate for volunteers</span></button>
                 </div>
                 <div class="footer__top--right">
                     <h3>Subscribe to our news</h3>
@@ -212,7 +211,7 @@
                     </div>
                 </div>
                 <div class="footer__bottom--menu">
-                    <div class="footer__bottom--menu-item"><a href="#">About</a></div>
+                    <div class="footer__bottom--menu-item"><a href="index.html">About</a></div>
                     <div class="footer__bottom--menu-item"><a href="#">Map</a></div>
                     <div class="footer__bottom--menu-item"><a href="#">Zoos</a></div>
                     <div class="footer__bottom--menu-item"><a href="#">Contact us</a></div>
@@ -225,7 +224,7 @@
         </div>
         </div>
     </footer>
-    <button class="top-button">⇧</button>
+    <button class="top-button"><span>⇧</span></button>
     <script src="donate-script.js"></script>
 </body>
 

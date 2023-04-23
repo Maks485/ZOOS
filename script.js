@@ -135,6 +135,15 @@ cards.forEach(card => {
       document.body.style.overflow = "";
       card.scrollIntoView({behavior: 'auto'});
     });
+
+    fullscreen.addEventListener('click', (event) => {
+      if (event.target === fullscreen) {
+        document.body.removeChild(fullscreen);
+        document.body.style.overflow = "";
+        card.scrollIntoView({behavior: 'auto'});
+      }
+    });
+
     document.body.appendChild(fullscreen);
   });
 });
